@@ -33,6 +33,7 @@ EOF
 
 for zipfile in *.zip
 do
+	test "X$zipfile" = '*.zip' && break;
 	zipfilesize="$(perl -e 'printf "%.1f", (-s $ARGV[0]) / 1024 / 1024' "$zipfile")"
 	cat <<-EOF
 		><p
